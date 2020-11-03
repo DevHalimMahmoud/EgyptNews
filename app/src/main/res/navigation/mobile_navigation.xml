@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_top_headlines">
+
+    <fragment
+        android:id="@+id/nav_top_headlines"
+        android:name="com.example.miniegyptnews.ui.TopHeadlines.TopHeadlinesFragment"
+        android:label="@string/menu_top_headlines"
+        tools:layout="@layout/fragment_top_headline" />
+
+    <fragment
+        android:id="@+id/nav_entertainment"
+        android:name="com.example.miniegyptnews.ui.Entertainment.EntertainmentFragment"
+        android:label="@string/menu_entertainment"
+        tools:layout="@layout/fragment_entertainment" />
+
+    <fragment
+        android:id="@+id/nav_business"
+        android:name="com.example.miniegyptnews.ui.Business.BusinessFragment"
+        android:label="@string/menu_business"
+        tools:layout="@layout/fragment_business" />
+    <fragment
+        android:id="@+id/nav_health"
+        android:name="com.example.miniegyptnews.ui.Health.HealthFragment"
+        android:label="@string/menu_health"
+        tools:layout="@layout/fragment_health" />
+    <fragment
+        android:id="@+id/nav_science"
+        android:name="com.example.miniegyptnews.ui.Science.ScienceFragment"
+        android:label="@string/menu_science"
+        tools:layout="@layout/fragment_science" />
+    <fragment
+        android:id="@+id/nav_sports"
+        android:name="com.example.miniegyptnews.ui.Sports.SportsFragment"
+        android:label="@string/menu_sports"
+        tools:layout="@layout/fragment_sports" />
+    <fragment
+        android:id="@+id/nav_technology"
+        android:name="com.example.miniegyptnews.ui.Technology.TechnologyFragment"
+        android:label="@string/menu_technology"
+        tools:layout="@layout/fragment_technology" />
+</navigation>

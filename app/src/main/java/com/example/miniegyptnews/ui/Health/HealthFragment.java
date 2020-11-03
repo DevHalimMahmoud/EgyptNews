@@ -1,0 +1,59 @@
+package com.example.miniegyptnews.ui.Health;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.miniegyptnews.R;
+import com.example.miniegyptnews.ui.ApiClient;
+import com.example.miniegyptnews.ui.ArticlesData;
+import com.example.miniegyptnews.ui.IApi;
+import com.example.miniegyptnews.ui.ItemArrayAdapter;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class HealthFragment extends Fragment {
+    RecyclerView recyclerView;
+    ArticlesData articlesData;
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_health, container, false);
+        recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
+        IApi apiService = ApiClient.getClient().create(IApi.class);
+        Call<ArticlesData> call = apiService.getHealth();
+
+        call.enqueue(new Callback<ArticlesData>() {
+            @Override
+            public void onResponse(Call<ArticlesData> call, Response<ArticlesData> response) {
+
+                assert response.body() != null;
+                ItemArrayAdapter itemArrayAdapter = new ItemArrayAdapter(R.layout.news_item, response.body());
+                articlesData=new ArticlesData(response.body().getStatus(),response.body().getTotalResults(),response.body().getArticles());
+
+                recyclerView.setAdapter(itemArrayAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<ArticlesData> call, Throwable t) {
+                Log.d("TAG","Response = "+t.toString(),t);
+            }
+        });
+        return root;
+    }
+}
