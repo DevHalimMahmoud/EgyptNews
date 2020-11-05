@@ -9,37 +9,98 @@
         android:id="@+id/nav_top_headlines"
         android:name="com.example.miniegyptnews.ui.TopHeadlines.TopHeadlinesFragment"
         android:label="@string/menu_top_headlines"
-        tools:layout="@layout/fragment_top_headline" />
+        tools:layout="@layout/fragment_top_headline" >
+        <action
+            android:id="@+id/action_nav_top_headlines_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_entertainment"
         android:name="com.example.miniegyptnews.ui.Entertainment.EntertainmentFragment"
         android:label="@string/menu_entertainment"
-        tools:layout="@layout/fragment_entertainment" />
+        tools:layout="@layout/fragment_entertainment" >
+        <action
+            android:id="@+id/action_nav_entertainment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_business"
         android:name="com.example.miniegyptnews.ui.Business.BusinessFragment"
         android:label="@string/menu_business"
-        tools:layout="@layout/fragment_business" />
+        tools:layout="@layout/fragment_business" >
+        <action
+            android:id="@+id/action_nav_business_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/nav_health"
         android:name="com.example.miniegyptnews.ui.Health.HealthFragment"
         android:label="@string/menu_health"
-        tools:layout="@layout/fragment_health" />
+        tools:layout="@layout/fragment_health" >
+        <action
+            android:id="@+id/action_nav_health_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/nav_science"
         android:name="com.example.miniegyptnews.ui.Science.ScienceFragment"
         android:label="@string/menu_science"
-        tools:layout="@layout/fragment_science" />
+        tools:layout="@layout/fragment_science" >
+        <action
+            android:id="@+id/action_nav_science_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/nav_sports"
         android:name="com.example.miniegyptnews.ui.Sports.SportsFragment"
         android:label="@string/menu_sports"
-        tools:layout="@layout/fragment_sports" />
+        tools:layout="@layout/fragment_sports" >
+        <action
+            android:id="@+id/action_nav_sports_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/nav_technology"
         android:name="com.example.miniegyptnews.ui.Technology.TechnologyFragment"
         android:label="@string/menu_technology"
-        tools:layout="@layout/fragment_technology" />
+        tools:layout="@layout/fragment_technology" >
+        <action
+            android:id="@+id/action_nav_technology_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.example.miniegyptnews.NewsDetailsFragment"
+        android:label="fragment_news_details"
+        tools:layout="@layout/fragment_news_details" />
 </navigation>

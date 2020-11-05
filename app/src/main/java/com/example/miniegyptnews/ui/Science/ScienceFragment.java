@@ -8,13 +8,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.miniegyptnews.R;
 import com.example.miniegyptnews.ui.ApiClient;
-import com.example.miniegyptnews.ui.ArticlesData;
+import com.example.miniegyptnews.ui.Models.ArticlesData;
 import com.example.miniegyptnews.ui.IApi;
 import com.example.miniegyptnews.ui.ItemArrayAdapter;
 
@@ -43,7 +44,14 @@ public class ScienceFragment extends Fragment {
             public void onResponse(Call<ArticlesData> call, Response<ArticlesData> response) {
 
                 assert response.body() != null;
-                ItemArrayAdapter itemArrayAdapter = new ItemArrayAdapter(R.layout.news_item, response.body());
+                ItemArrayAdapter itemArrayAdapter = new ItemArrayAdapter(R.layout.news_item, response.body(), new ItemArrayAdapter.GoToDetails() {
+                    @Override
+                    public void onNewsClick(View view, int position) {
+                        Bundle e = new Bundle();
+                        e.putSerializable("news",response.body().getArticles().get(position));
+                        Navigation.findNavController(view).navigate(R.id.action_nav_science_to_newsDetailsFragment,e);
+                    }
+                });
                 articlesData=new ArticlesData(response.body().getStatus(),response.body().getTotalResults(),response.body().getArticles());
 
                 recyclerView.setAdapter(itemArrayAdapter);

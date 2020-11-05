@@ -1,52 +1,10 @@
-package com.example.miniegyptnews.ui;
+package com.example.miniegyptnews.ui.Models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class ArticlesData {
-    @SerializedName("status")
-    private String status;
-    @SerializedName("totalResults")
-    private int totalResults;
-    @SerializedName("articles")
-    private ArrayList<Article> articles;
-
-
-    public ArticlesData(String status, int totalResults, ArrayList<Article> articles) {
-        this.status = status;
-        this.totalResults = totalResults;
-        this.articles = articles;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getTotalResults() {
-        return totalResults;
-    }
-
-    public void setTotalResults(int totalResults) {
-        this.totalResults = totalResults;
-    }
-
-    public ArrayList<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(ArrayList<Article> articles) {
-        this.articles = articles;
-    }
-
-
-}
-
-class Article {
+public class Article implements Serializable {
     @SerializedName("source")
     private source source;
     @SerializedName("author")
@@ -143,32 +101,3 @@ class Article {
 
 }
 
-class source {
-    @SerializedName("id")
-    private String id;
-    @SerializedName("name")
-    private String name;
-
-    public source(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-}
