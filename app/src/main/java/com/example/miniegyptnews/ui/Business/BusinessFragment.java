@@ -35,7 +35,6 @@ public class BusinessFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
         IApi apiService = ApiClient.getClient().create(IApi.class);
         Call<ArticlesData> call = apiService.getBusiness();
 
