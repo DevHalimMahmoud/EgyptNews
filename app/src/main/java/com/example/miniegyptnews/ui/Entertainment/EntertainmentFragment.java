@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.miniegyptnews.R;
-import com.example.miniegyptnews.ui.ApiClient;
+import com.example.miniegyptnews.ui.API.ApiClient;
 import com.example.miniegyptnews.ui.Models.ArticlesData;
-import com.example.miniegyptnews.ui.IApi;
-import com.example.miniegyptnews.ui.ItemArrayAdapter;
+import com.example.miniegyptnews.ui.API.IApi;
+import com.example.miniegyptnews.ui.API.ItemArrayAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +30,7 @@ public class EntertainmentFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         View root = inflater.inflate(R.layout.fragment_entertainment, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));

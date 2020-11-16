@@ -1,4 +1,4 @@
-package com.example.miniegyptnews.ui;
+package com.example.miniegyptnews.ui.API;
 
 import com.example.miniegyptnews.ui.Models.ArticlesData;
 

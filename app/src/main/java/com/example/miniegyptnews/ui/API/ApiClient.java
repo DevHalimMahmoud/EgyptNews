@@ -1,4 +1,4 @@
-package com.example.miniegyptnews.ui;
+package com.example.miniegyptnews.ui.API;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

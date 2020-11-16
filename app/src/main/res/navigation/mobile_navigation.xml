@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/newsDetailsFragment"
-        android:name="com.example.miniegyptnews.NewsDetailsFragment"
+        android:name="com.example.miniegyptnews.ui.Details.NewsDetailsFragment"
         android:label="fragment_news_details"
         tools:layout="@layout/fragment_news_details" />
 </navigation>

@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_top_headlines, R.id.nav_entertainment, R.id.nav_business,R.id.nav_health,R.id.nav_science,R.id.nav_sports,R.id.nav_technology)
                 .setDrawerLayout(drawer)

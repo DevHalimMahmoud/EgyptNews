@@ -1,4 +1,4 @@
-package com.example.miniegyptnews.ui;
+package com.example.miniegyptnews.ui.API;
 
 import android.content.Context;
 import android.util.Log;

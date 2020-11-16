@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.miniegyptnews.R;
-import com.example.miniegyptnews.ui.ApiClient;
+import com.example.miniegyptnews.ui.API.ApiClient;
 import com.example.miniegyptnews.ui.Models.ArticlesData;
-import com.example.miniegyptnews.ui.IApi;
-import com.example.miniegyptnews.ui.ItemArrayAdapter;
+import com.example.miniegyptnews.ui.API.IApi;
+import com.example.miniegyptnews.ui.API.ItemArrayAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,12 +1,15 @@
-package com.example.miniegyptnews;
+package com.example.miniegyptnews.ui.Details;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,6 +21,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.miniegyptnews.R;
+import com.example.miniegyptnews.ReadHTML;
 import com.example.miniegyptnews.ui.Models.Article;
 import com.google.android.material.button.MaterialButton;
 
@@ -36,8 +41,11 @@ public class NewsDetailsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Details");
     }
 
     @Override
@@ -45,6 +53,7 @@ public class NewsDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_news_details, container, false);
+
         newsImage = v.findViewById(R.id.news_details_iv);
         newsTitle = v.findViewById(R.id.news_title_tv);
         newsDetails = v.findViewById(R.id.news_details_tv);
